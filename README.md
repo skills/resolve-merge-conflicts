@@ -5,11 +5,11 @@
   Add your open source license, GitHub uses Creative Commons Attribution 4.0 International.
 -->
 
-<img src=TBD_social_image width=300 align=right>
+<img src=https://repository-images.githubusercontent.com/139188904/57722780-586d-11ea-8e74-8484f7ff7b43 width=300 align=right>
 
-# TBD course title
+# Resolving merge conflicts
 
-_TBD course description_
+_Merge conflicts are a normal part of working in Git. Learn why they happen and how to resolve them with ease._
 
 <!--
   <<< Author notes: Start of the course >>>
@@ -23,18 +23,18 @@ _TBD course description_
 <details id=0 open>
 <summary><strong>:golf: Start</strong></summary>
 
-**To start this course: [<img width="150" alt="Use this template" src="https://user-images.githubusercontent.com/1221423/148581131-555c0fb8-5361-4450-a760-75fa6219a2fc.png">](https://github.com/githublearn/TBD/generate)**
+**To start this course: [<img width="150" alt="Use this template" src="https://user-images.githubusercontent.com/1221423/148581131-555c0fb8-5361-4450-a760-75fa6219a2fc.png">](https://github.com/githublearn/resolving-merge-conflicts/generate)**
 
 > We recommend creating a public repository, as private repositories will [use Actions minutes](https://docs.github.com/en/billing/managing-billing-for-github-actions/about-billing-for-github-actions).<br>
 > After you make your own repository, wait about 20 seconds and refresh. I will go to the next step.
 
-TBD welcome paragraph
+Merge conflicts happen when two people make changes to the same file on GitHub—a common occurrence when you’re working with other developers. While resolving differences might involve some discussion, merge conflicts don’t have to be scary. This course guides you through the steps to finding the best merge conflict solution, so your team can keep building.
 
-- **Who is this for**: TBD
-- **What you'll learn**: TBD
-- **What you'll build**: TBD
-- **Prerequisites**: TBD
-- **How long**: This course is TBD steps and takes less than TBD.
+- **Who is this for**: New developers, new GitHub users, users new to Git, students, managers, teams.
+- **What you'll learn**: What merge conflicts are, how you resolve merge conflicts, how to reduce merge conflicts.
+- **What you'll build**: We'll work with a short Markdown resume file in this course.
+- **Prerequisites**: We recommend taking [Introduction to GitHub](https://lab.github.com/githubtraining/introduction-to-github) prior to this course.
+- **How long**: This course is 3 steps and takes less than one hour.
 
 </details>
 
@@ -47,17 +47,19 @@ TBD welcome paragraph
 -->
 
 <details id=1>
-<summary><strong>:TBD: Step 1: TBD</strong></summary>
+<summary><strong>:TBD: Step 1: Resolve a merge conflict</strong></summary>
 
 ### :wave: Welcome to "TBD"!
 
 **What is _TBD_**: TBD
 
+https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/resolving-a-merge-conflict-using-the-command-line
+
 ### :keyboard: Activity: TBD
 
-1. Open a new browser tab, and work on the steps in your second tab while you read the instructions in this tab
+1. Open a new browser tab, and work on the steps in your second tab while you read the instructions in this tab.
 1. TBD
-1. Wait about 20 seconds then refresh this page for the next step
+1. Wait about 20 seconds then refresh this page for the next step.
 
 </details>
 
@@ -68,9 +70,9 @@ TBD welcome paragraph
 -->
 
 <details id=2>
-<summary><strong>:TBD: Step 2: TBD</strong></summary>
+<summary><strong>:TBD: Step 2: Create your own conflict</strong></summary>
 
-### :tada: You did TBD!
+### :tada: Good job! You've solved a merge conflict!
 
 TBD
 
@@ -79,7 +81,7 @@ TBD
 ### :keyboard: Activity: TBD
 
 1. TBD
-1. Wait about 20 seconds then refresh this page for the next step
+1. Wait about 20 seconds then refresh this page for the next step.
 
 </details>
 
@@ -90,61 +92,18 @@ TBD
 -->
 
 <details id=3>
-<summary><strong>:TBD: Step 3: TBD</strong></summary>
+<summary><strong>:shipit: Step 3: Merge your pull request</strong></summary>
 
-### Nice work TBD :sparkles:
+### :heart: Almost there!
 
-TBD
-
-**What is _TBD_**: TBD
-
-### :keyboard: Activity: TBD
-
-1. TBD
-1. Wait about 20 seconds then refresh this page for the next step
-
-</details>
-
-<!--
-  <<< Author notes: Step 4 >>>
-  Start this step by acknowledging the first step.
-  Define terms and link to docs.github.com.
--->
-
-<details id=4>
-<summary><strong>:TBD: Step 4: TBD</strong></summary>
-
-### Nicely done friend! :sparkles:
-
-TBD
-
-**What is _TBD_**: TBD
-
-### :keyboard: Activity: TBD
-
-1. TBD
-1. Wait about 20 seconds then refresh this page for the next step
-
-</details>
-
-<!--
-  <<< Author notes: Step 5 >>>
-  Start this step by acknowledging the first step.
-  Define terms and link to docs.github.com.
--->
-
-<details id=5>
-<summary><strong>:shipit: Step 5: Merge your pull request</strong></summary>
-
-### :heart: Almost there TBD!
-
-You can now [merge](https://help.github.com/articles/github-glossary/#merge) your pull request!
+You can now [merge](https://docs.github.com/en/get-started/quickstart/github-glossary#merge) your pull request!
 
 ### :keyboard: Activity: Merge your pull request
 
-1. Click **Merge pull request**
-1. Delete the branch `TBD` (optional)
-1. Wait about 20 seconds then refresh this page for the next step
+1. First, resolve any remaining conflicts in your pull request.
+1. Click **Merge pull request**.
+1. Delete the branch `my-resume` (optional).
+1. Wait about 20 seconds then refresh this page for the next step.
 
 </details>
 
@@ -158,19 +117,21 @@ You can now [merge](https://help.github.com/articles/github-glossary/#merge) you
 
 ### Congratulations friend, you've completed this course!
 
-<img src=TBD alt=celebrate width=300 align=right>
+<img src=https://octodex.github.com/images/benevocats.jpg alt=celebrate width=300 align=right>
 
 Here's a recap of all the tasks you've accomplished in your repository:
 
-- TBD
+- You learned why merge conflicts happen.
+- You resolved a simple merge conflict.
+- You created a merge conflict, and resolved it!
 
 ### What's next?
 
-- TBD
-- We'd love to hear what you thought of this course [in our community forum](https://github.community/c/education/github-learning-lab/34)
-- [Take another GitHub Learn Course](https://github.com/githublearn)
-- [Read the GitHub Getting Started docs](https://docs.github.com/en/get-started)
-- To find projects to contribute to, check out [GitHub Explore](https://github.com/explore)
+- Make your own Markdown resume site with GitHub Pages! Learn how in our [GitHub Pages](https://github.com/githublearn/github-pages) course.
+- We'd love to hear what you thought of this course [in our community forum](https://github.community/c/education/github-learning-lab/34).
+- [Take another GitHub Learn Course](https://github.com/githublearn).
+- [Read the GitHub Getting Started docs](https://docs.github.com/en/get-started).
+- To find projects to contribute to, check out [GitHub Explore](https://github.com/explore).
 
 </details>
 

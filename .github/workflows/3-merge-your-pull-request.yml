@@ -1,8 +1,8 @@
-name: Step 5, Merge your pull request
+name: Step 3, Merge your pull request
 
 # This step triggers after a pull requst is merged to `main`
 # This step sets STEP to X
-# This step closes <details id=5> and opens <details id=X>
+# This step closes <details id=3> and opens <details id=X>
 
 # This will run every time we create push a commit to `main`
 # Reference https://docs.github.com/en/actions/learn-github-actions/events-that-trigger-workflows
@@ -23,7 +23,7 @@ jobs:
 
     # We will only run this action when:
     # 1. This repository isn't the template repository
-    # 2. The STEP is currently 5 (see update-step.sh)
+    # 2. The STEP is currently 3 (see update-step.sh)
     # Reference https://docs.github.com/en/actions/learn-github-actions/contexts
     # Reference https://docs.github.com/en/actions/learn-github-actions/expressions
     if: ${{ github.repository_owner != 'githublearn' }}
@@ -38,13 +38,13 @@ jobs:
         with:
           fetch-depth: 0 # Let's get all the branches
 
-      # Update README to close <details id=5>
+      # Update README to close <details id=3>
       # and open <details id=X>
       # and set STEP to 'X'
       - name: Update to step X
         run: ./.github/script/update-step.sh
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          FROM_STEP: 5
+          FROM_STEP: 3
           TO_STEP: X
           BRANCH_NAME: TBD
