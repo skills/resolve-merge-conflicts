@@ -39,6 +39,8 @@ jobs:
           fetch-depth: 0 # Let's get all the branches
 
       # TBD Include any additional set up steps here
+      # tbd create `my-resume` branch
+      # tbd create a conflict on the `my-resume` branch
 
       # Update README to close <details id=0>
       # and open <details id=1>
