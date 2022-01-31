@@ -7,7 +7,7 @@
 
 <img src=https://repository-images.githubusercontent.com/139188904/57722780-586d-11ea-8e74-8484f7ff7b43 width=300 align=right>
 
-# Resolving merge conflicts
+# Resolve merge conflicts
 
 _Merge conflicts are a normal part of working in Git. Learn why they happen and how to resolve them with ease._
 
@@ -23,12 +23,12 @@ _Merge conflicts are a normal part of working in Git. Learn why they happen and 
 <details id=0 open>
 <summary><strong>:golf: Start</strong></summary>
 
-**To start this course: [<img width="150" alt="Use this template" src="https://user-images.githubusercontent.com/1221423/148581131-555c0fb8-5361-4450-a760-75fa6219a2fc.png">](https://github.com/githublearn/resolving-merge-conflicts/generate)**
+**To start this course: [<img width="150" alt="Use this template" src="https://user-images.githubusercontent.com/1221423/148581131-555c0fb8-5361-4450-a760-75fa6219a2fc.png">](https://github.com/githublearn/resolve-merge-conflicts/generate)**
 
 > We recommend creating a public repository, as private repositories will [use Actions minutes](https://docs.github.com/en/billing/managing-billing-for-github-actions/about-billing-for-github-actions).<br>
 > After you make your own repository, wait about 20 seconds and refresh. I will go to the next step.
 
-Merge conflicts happen when two people make changes to the same file on GitHub—a common occurrence when you’re working with others. While resolving differences might involve some discussion, merge conflicts don’t have to be scary. This course guides you through the steps to finding the best merge conflict solution, so your team can keep building.
+Merge conflicts happen when two people make changes to the same file on GitHub—a common occurrence when you’re working with others. While resolve differences might involve some discussion, merge conflicts don’t have to be scary. This course guides you through the steps to finding the best merge conflict solution, so your team can keep building.
 
 - **Who is this for**: New developers, new GitHub users, users new to Git, students, managers, teams.
 - **What you'll learn**: What merge conflicts are, how you resolve merge conflicts, how to reduce merge conflicts.
