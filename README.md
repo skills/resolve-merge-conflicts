@@ -13,7 +13,7 @@ _Merge conflicts are a normal part of working in Git. Learn why they happen and 
 
 <!--
   <<< Author notes: Start of the course >>>
-  Include start button, a note about actions minutes,
+  Include start button, a note about Actions minutes,
   and tell the learner why they should take the course.
   Each step should be wrapped in <details>/<summary>, with an `id` set.
   The start <details> should have `open` as well.
