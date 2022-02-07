@@ -34,7 +34,7 @@ Merge conflicts happen when two people make changes to the same file on GitHubâ€
 - **What you'll learn**: What merge conflicts are, how you resolve merge conflicts, how to reduce merge conflicts.
 - **What you'll build**: We'll work with a short Markdown resume file in this course.
 - **Prerequisites**: We recommend taking [Introduction to GitHub](https://lab.github.com/githubtraining/introduction-to-github) prior to this course.
-- **How long**: This course is 3 steps and takes less than 30 minutes.
+- **How long**: This course is three steps long and takes less than 30 minutes to complete.
 
 </details>
 
@@ -49,7 +49,7 @@ Merge conflicts happen when two people make changes to the same file on GitHubâ€
 <details id=1>
 <summary><strong>:lotus_position: Step 1: Resolve a merge conflict</strong></summary>
 
-### :wave: Welcome to "Managing Merge Conflicts"!
+### Welcome to "Managing Merge Conflicts"! :wave:
 
 **What is a _merge conflict_**: A **Merge conflict** occurs when changes are made to the same part of the same file on two different branches. You usually find out about conflicts in a pull request.
 
@@ -83,7 +83,7 @@ This can be intimidating, but have no fear, Git is smart when it comes to mergin
 <details id=2>
 <summary><strong>:smiling_imp: Step 2: Create your own conflict</strong></summary>
 
-### :tada: Good job! You've solved a merge conflict!
+### Good job! You've solved a merge conflict! :tada:
 
 Resolving a conflict doesn't automatically merge the pull request in GitHub. Instead, it stores the resolution of the conflict in a merge commit and allows you and your team to keep working. To resolve a conflict, GitHub performs what is known as a *reverse merge*. This means that the changes from the `main` branch were  merged into your `my-resume` branch. With a reverse merge, only the `my-resume` branch is updated. This allows you to test the resolved changes on your branch before you merge it into `main`.
 
@@ -112,7 +112,7 @@ We went ahead and pushed another change to `main` without updating your `my-resu
 <details id=3>
 <summary><strong>:shipit: Step 3: Merge your pull request</strong></summary>
 
-### :heart: Almost there!
+### Almost there! :heart:
 
 You can now [merge](https://docs.github.com/en/get-started/quickstart/github-glossary#merge) your pull request!
 
@@ -148,7 +148,7 @@ Here's a recap of all the tasks you've accomplished in your repository:
 
 - Make your own Markdown resume site with GitHub Pages! Learn how in our [GitHub Pages](https://github.com/githublearn/github-pages) course.
 - We'd love to hear what you thought of this course [in our community forum](https://github.community/c/education/github-learning-lab/34).
-- [Take another GitHub Learn Course](https://github.com/githublearn).
+- [Take another GitHub Learn course](https://github.com/githublearn).
 - [Read the GitHub Getting Started docs](https://docs.github.com/en/get-started).
 - To find projects to contribute to, check out [GitHub Explore](https://github.com/explore).
 
