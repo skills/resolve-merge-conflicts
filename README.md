@@ -76,7 +76,7 @@ This can be intimidating, but have no fear, Git is smart when it comes to mergin
 
 <!--
   <<< Author notes: Step 2 >>>
-  Start this step by acknowledging the first step.
+  Start this step by acknowledging the previous step.
   Define terms and link to docs.github.com.
 -->
 
@@ -105,7 +105,7 @@ We went ahead and pushed another change to `main` without updating your `my-resu
 
 <!--
   <<< Author notes: Step 3 >>>
-  Start this step by acknowledging the first step.
+  Start this step by acknowledging the previous step.
   Define terms and link to docs.github.com.
 -->
 
