@@ -91,14 +91,14 @@ Now let's get a little evil. (Its for educational purposes!)
 
 ### :keyboard: Activity: Create your own conflict
 
-We went ahead and pushed another change to `main` without updating your `my-resume` branch in the background.
+We went ahead and added a new file `references.md` and pushed that change to `main` without updating your `my-resume` branch in the background.
 
-1. Click on the **Files changed** tab in this pull request.
-1. Click in the top right-hand corner of the `resume.md` file that had been previously modified.
-1. Click **Edit file** to open the file editor.
-1. Modify the contents of the last line.
+1. Browse to the `my-resume` branch.
+1. Click the `Add file` dropdown menu and then on `Create new file`.
+1. Create a file named `references.md`.
+1. Enter some text that conflicts with what we added for `references.md` in the `main` branch.
 1. Scroll to the bottom of the page and enter a commit message for your change.
-1. Click the **Commit changes** button, making sure the "Commit directly to the `my-resume` branch" option is selected.
+1. Click the **Commit new file** button, making sure the "Commit directly to the `my-resume` branch" option is selected.
 1. Wait about 20 seconds then refresh this page for the next step.
 
 </details>
