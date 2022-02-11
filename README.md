@@ -28,7 +28,7 @@ _Merge conflicts are a normal part of working in Git. Learn why they happen and 
 > We recommend creating a public repository, as private repositories will [use Actions minutes](https://docs.github.com/en/billing/managing-billing-for-github-actions/about-billing-for-github-actions).<br>
 > After you make your own repository, wait about 20 seconds and refresh. I will go to the next step.
 
-Merge conflicts happen when two people make changes to the same file on GitHub—a common occurrence when you’re working with others. While resolve differences might involve some discussion, merge conflicts don’t have to be scary. This course guides you through the steps to finding the best merge conflict solution, so your team can keep building.
+Merge conflicts happen when two people make changes to the same file on GitHub—a common occurrence when you’re working with others. While resolving differences might involve some discussion, merge conflicts don’t have to be scary. This course guides you through the steps to finding the best merge conflict solution, so your team can keep building.
 
 - **Who is this for**: New developers, new GitHub users, users new to Git, students, managers, teams.
 - **What you'll learn**: What merge conflicts are, how you resolve merge conflicts, how to reduce merge conflicts.
@@ -51,15 +51,15 @@ Merge conflicts happen when two people make changes to the same file on GitHub�
 
 ### Welcome to "Managing Merge Conflicts"! :wave:
 
-**What is a _merge conflict_**: A **Merge conflict** occurs when changes are made to the same part of the same file on two different branches. You usually find out about conflicts in a pull request.
+**What is a _merge conflict_?**: A **merge conflict** occurs when changes are made to the same part of the same file on two different branches. You usually find out about conflicts in a pull request.
 
 This can be intimidating, but have no fear, Git is smart when it comes to merging! Git only needs a human to decide how to [resolve the conflict](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/resolving-a-merge-conflict-using-the-command-line). Sometimes, the best way to resolve a merge conflict is to add content that's from both branches, or even something that isn't on either! This is why Git needs a human to look at the code and make the proper fixes.
 
 ### :keyboard: Activity: Resolve a merge conflict
 
 1. Open a new browser tab, and work on the steps in your second tab while you read the instructions in this tab.
-1. Open the pull request we made for you, and we also made a conflict. Have no fear!
-1. At the bottom of the page in the "This branch has conflicts that must be resolved" section of the pull request, click the **Resolve conflicts** button.
+1. Open the pull request we made for you. We also made a conflict. Have no fear!
+1. At the bottom of the page, under "This branch has conflicts that must be resolved", click the **Resolve conflicts** button.
 1. Look for the highlighted sections that begins with  `<<<<<<<  my-resume` and ends with `>>>>>>> main`. These markers are added by Git to show you the content that is in conflict.
 1. Remove the changes made on the main branch by deleting all of the content below the `=======` and above `>>>>>>> main`.
 1. Next, remove the merge conflict markers by deleting the following lines:
@@ -87,11 +87,11 @@ This can be intimidating, but have no fear, Git is smart when it comes to mergin
 
 Resolving a conflict doesn't automatically merge the pull request in GitHub. Instead, it stores the resolution of the conflict in a merge commit and allows you and your team to keep working. To resolve a conflict, GitHub performs what is known as a *reverse merge*. This means that the changes from the `main` branch were  merged into your `my-resume` branch. With a reverse merge, only the `my-resume` branch is updated. This allows you to test the resolved changes on your branch before you merge it into `main`.
 
-Now let's get a little evil. (Its for educational purposes!)
+Now, let's get a little evil. (It's for educational purposes!)
 
 ### :keyboard: Activity: Create your own conflict
 
-We went ahead and added a new file `references.md` and pushed that change to `main` without updating your `my-resume` branch in the background.
+We went ahead and added a new file called `references.md` and pushed that change to `main`, without updating your `my-resume` branch.
 
 1. Browse to the `my-resume` branch.
 1. Click the `Add file` dropdown menu and then on `Create new file`.
