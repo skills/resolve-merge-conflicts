@@ -1,14 +1,17 @@
 name: Step 1, Resolve a merge conflict
 
-# This step triggers after TBD
+# This step triggers after the user resolves the merge conflict
 # This step sets STEP to 2
 # This step closes <details id=1> and opens <details id=2>
 
-# This will run every time we TBD
+# This will run every time we push to `my-resume` (this will be a merge commit 
+# since the user is resolving a merge conflict)
 # Reference https://docs.github.com/en/actions/learn-github-actions/events-that-trigger-workflows
 on:
   workflow_dispatch:
-  TBD:
+  push:
+    branches:
+      - my-resume
 
 permissions:
   # Need `contents: read` to checkout the repository
@@ -16,8 +19,8 @@ permissions:
   contents: write
 
 jobs:
-  on_TBD:
-    name: On TBD
+  on_resolve_merge_conflict:
+    name: On resolve merge conflict
 
     # We will only run this action when:
     # 1. This repository isn't the template repository
@@ -35,8 +38,33 @@ jobs:
         uses: actions/checkout@v2
         with:
           fetch-depth: 0 # Let's get all the branches
+          ref: my-resume
 
-      # TBD include any further steps here
+      - name: Create and push a new file on main
+        run: |
+          echo "Make sure we are on step 1"
+          if [ "$(cat .github/script/STEP)" != 1 ]
+          then
+            echo "Current step is not 1"
+            exit 0
+          fi
+
+          echo "Checkout main"
+          git checkout main 
+
+          echo "Create new file"
+          printf "# References\n\n* octocat 1 😈" >> references.md
+
+          echo "Commit file"
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add references.md
+          git commit --message="Add references.md"
+
+          echo "Push"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       # Update README to close <details id=1>
       # and open <details id=2>
@@ -47,4 +75,4 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           FROM_STEP: 1
           TO_STEP: 2
-          BRANCH_NAME: TBD
+          BRANCH_NAME: my-resume
