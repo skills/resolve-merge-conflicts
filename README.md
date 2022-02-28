@@ -111,7 +111,7 @@ We went ahead and added a new file called `references.md` and pushed that change
 -->
 
 <details id=3>
-<summary><h2>:squirrel: Step 3: Merge your pull request</h2></summary>
+<summary><h2>:chipmunk: Step 3: Merge your pull request</h2></summary>
 
 _Almost there! :heart:_
 
