@@ -21,10 +21,11 @@ _Merge conflicts are a normal part of working in Git. Learn why they happen and 
 -->
 
 <details id=0 open>
-<summary><strong>:golf: Start</strong></summary>
+<summary><h2>:golf: Start</h2></summary>
 
-### [![start-course](https://user-images.githubusercontent.com/1221423/154366775-5491926f-9ed1-4a4a-a229-0810c0ed7e5e.svg)](https://github.com/githublearn/resolve-merge-conflicts/generate)
+[![start-course](https://user-images.githubusercontent.com/1221423/154366775-5491926f-9ed1-4a4a-a229-0810c0ed7e5e.svg)](https://github.com/githublearn/resolve-merge-conflicts/generate)
 
+> When you select **Start course** or **Use this template**, you will be prompted to create a new repository.
 > We recommend creating a public repository, as private repositories will [use Actions minutes](https://docs.github.com/en/billing/managing-billing-for-github-actions/about-billing-for-github-actions).<br>
 > After you make your own repository, wait about 20 seconds and refresh. I will go to the next step.
 
@@ -47,9 +48,9 @@ Merge conflicts happen when two people make changes to the same file on GitHubâ€
 -->
 
 <details id=1>
-<summary><strong>:lotus_position: Step 1: Resolve a merge conflict</strong></summary>
+<summary><h2>:lotus_position: Step 1: Resolve a merge conflict</h2></summary>
 
-### Welcome to "Managing Merge Conflicts"! :wave:
+_Welcome to "Managing Merge Conflicts"! :wave:_
 
 **What is a _merge conflict_?**: A **merge conflict** occurs when changes are made to the same part of the same file on two different branches. You usually find out about conflicts in a pull request.
 
@@ -81,9 +82,9 @@ This can be intimidating, but have no fear, Git is smart when it comes to mergin
 -->
 
 <details id=2>
-<summary><strong>:smiling_imp: Step 2: Create your own conflict</strong></summary>
+<summary><h2>:smiling_imp: Step 2: Create your own conflict</h2></summary>
 
-### Good job! You've solved a merge conflict! :tada:
+_Good job! You've solved a merge conflict! :tada:_
 
 Resolving a conflict doesn't automatically merge the pull request in GitHub. Instead, it stores the resolution of the conflict in a merge commit and allows you and your team to keep working. To resolve a conflict, GitHub performs what is known as a *reverse merge*. This means that the changes from the `main` branch were  merged into your `my-resume` branch. With a reverse merge, only the `my-resume` branch is updated. This allows you to test the resolved changes on your branch before you merge it into `main`.
 
@@ -110,9 +111,9 @@ We went ahead and added a new file called `references.md` and pushed that change
 -->
 
 <details id=3>
-<summary><strong>:shipit: Step 3: Merge your pull request</strong></summary>
+<summary><h2>:shipit: Step 3: Merge your pull request</h2></summary>
 
-### Almost there! :heart:
+_Almost there! :heart:_
 
 You can now [merge](https://docs.github.com/en/get-started/quickstart/github-glossary#merge) your pull request!
 
@@ -132,9 +133,9 @@ You can now [merge](https://docs.github.com/en/get-started/quickstart/github-glo
 -->
 
 <details id=X>
-<summary><strong>:checkered_flag: Finish</strong></summary>
+<summary><h2>:checkered_flag: Finish</h2></summary>
 
-### Congratulations friend, you've completed this course!
+_Congratulations friend, you've completed this course!_
 
 <img src=https://octodex.github.com/images/benevocats.jpg alt=celebrate width=300 align=right>
 
