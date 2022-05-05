@@ -7,7 +7,7 @@
 
 # Resolve merge conflicts
 
-_Merge conflicts are a normal part of working in Git. Learn why they happen and how to resolve them with ease._
+_Learn why conflicts happen and how to resolve them._
 
 <!--
   <<< Author notes: Start of the course >>>
