@@ -5,8 +5,6 @@
   Add your open source license, GitHub uses Creative Commons Attribution 4.0 International.
 -->
 
-<img src=https://user-images.githubusercontent.com/1221423/156947036-03513bb1-3dd4-412d-b89a-605b3170b73a.svg width=300 align=right>
-
 # Resolve merge conflicts
 
 _Merge conflicts are a normal part of working in Git. Learn why they happen and how to resolve them with ease._
@@ -21,7 +19,7 @@ _Merge conflicts are a normal part of working in Git. Learn why they happen and 
 -->
 
 <details id=0 open>
-<summary><h2>:golf: Start</h2></summary>
+<summary><h2>Start</h2></summary>
 
 [![start-course](https://user-images.githubusercontent.com/1221423/154366775-5491926f-9ed1-4a4a-a229-0810c0ed7e5e.svg)](https://github.com/skills/resolve-merge-conflicts/generate)
 
@@ -48,7 +46,7 @@ Merge conflicts happen when two people make changes to the same file on GitHubâ€
 -->
 
 <details id=1>
-<summary><h2>:lotus_position: Step 1: Resolve a merge conflict</h2></summary>
+<summary><h2>Step 1: Resolve a merge conflict</h2></summary>
 
 _Welcome to "Managing Merge Conflicts"! :wave:_
 
@@ -82,7 +80,7 @@ This can be intimidating, but have no fear, Git is smart when it comes to mergin
 -->
 
 <details id=2>
-<summary><h2>:smiling_imp: Step 2: Create your own conflict</h2></summary>
+<summary><h2>Step 2: Create your own conflict</h2></summary>
 
 _Good job! You've solved a merge conflict! :tada:_
 
@@ -111,7 +109,7 @@ We went ahead and added a new file called `references.md` and pushed that change
 -->
 
 <details id=3>
-<summary><h2>:chipmunk: Step 3: Merge your pull request</h2></summary>
+<summary><h2>Step 3: Merge your pull request</h2></summary>
 
 _Almost there! :heart:_
 
@@ -133,7 +131,7 @@ You can now [merge](https://docs.github.com/en/get-started/quickstart/github-glo
 -->
 
 <details id=X>
-<summary><h2>:checkered_flag: Finish</h2></summary>
+<summary><h2>Finish</h2></summary>
 
 _Congratulations friend, you've completed this course!_
 
