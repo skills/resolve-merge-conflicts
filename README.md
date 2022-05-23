@@ -18,14 +18,7 @@ _Learn why conflicts happen and how to resolve them._
   Do not use quotes on the <details> tag attributes.
 -->
 
-<details id=0 open>
-<summary><h2>Start</h2></summary>
-
-[![start-course](https://user-images.githubusercontent.com/1221423/154366775-5491926f-9ed1-4a4a-a229-0810c0ed7e5e.svg)](https://github.com/skills/resolve-merge-conflicts/generate)
-
-> When you select **Start course** or **Use this template**, you will be prompted to create a new repository.
-> We recommend creating a public repository, as private repositories will [use Actions minutes](https://docs.github.com/en/billing/managing-billing-for-github-actions/about-billing-for-github-actions).<br>
-> After you make your own repository, wait about 20 seconds and refresh. I will go to the next step.
+<!--step0-->
 
 Merge conflicts happen when two people make changes to the same file on GitHub—a common occurrence when you’re working with others. While resolving differences might involve some discussion, merge conflicts don’t have to be scary. This course guides you through the steps to finding the best merge conflict solution, so your team can keep building.
 
@@ -35,7 +28,17 @@ Merge conflicts happen when two people make changes to the same file on GitHub�
 - **Prerequisites**: We recommend taking [Introduction to GitHub](https://lab.github.com/githubtraining/introduction-to-github) prior to this course.
 - **How long**: This course is three steps long and takes less than 30 minutes to complete.
 
-</details>
+## How to start this course
+
+1. Above these instructions, right-click **Use this template** and open the link in a new tab.
+   ![Use this template](https://user-images.githubusercontent.com/1221423/169618716-fb17528d-f332-4fc5-a11a-eaa23562665e.png)
+2. In the new tab, follow the prompts to create a new repository.
+   - For owner, choose your personal account or an organization to host the repository.
+   - We recommend creating a public repository—private repositories will [use Actions minutes](https://docs.github.com/en/billing/managing-billing-for-github-actions/about-billing-for-github-actions).
+   ![Create a new repository](https://user-images.githubusercontent.com/1221423/169618722-406dc508-add4-4074-83f0-c7a7ad87f6f3.png)
+3. After your new repository is created, wait about 20 seconds, then refresh the page. Follow the step-by-step instructions in the new repository's README.
+
+<!--endstep0-->
 
 <!--
   <<< Author notes: Step 1 >>>
