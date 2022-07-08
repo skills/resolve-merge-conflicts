@@ -25,7 +25,7 @@ Merge conflicts happen when two people make changes to the same file on GitHubâ€
 - **Who is this for**: New developers, new GitHub users, users new to Git, students, managers, teams.
 - **What you'll learn**: What merge conflicts are, how you resolve merge conflicts, how to reduce merge conflicts.
 - **What you'll build**: We'll work with a short Markdown resume file in this course.
-- **Prerequisites**: We recommend taking [Introduction to GitHub](https://lab.github.com/githubtraining/introduction-to-github) prior to this course.
+- **Prerequisites**: We recommend taking [Introduction to GitHub](https://github.com/skills/introduction-to-github) prior to this course.
 - **How long**: This course is three steps long and takes less than 30 minutes to complete.
 
 ## How to start this course
