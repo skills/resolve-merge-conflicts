@@ -21,18 +21,18 @@ _Learn why conflicts happen and how to resolve them._
 <details id=0 open>
 <summary><h2>Welcome</h2></summary>
 
-TBD-welcome-paragraph
+Merge conflicts happen when two people make changes to the same file on GitHub—a common occurrence when you’re working with others. While resolving differences might involve some discussion, merge conflicts don’t have to be scary. This course guides you through the steps to finding the best merge conflict solution, so your team can keep building.
 
-- **Who is this for**: TBD-audience.
-- **What you'll learn**: TBD-objective.
-- **What you'll build**: TBD-result.
-- **Prerequisites**: TBD-prerequisites.
-- **How long**: This course is TBD-step-count steps long and takes less than TBD-duration to complete.
+- **Who is this for**: New developers, new GitHub users, users new to Git, students, managers, teams.
+- **What you'll learn**: What merge conflicts are, how you resolve merge conflicts, how to reduce merge conflicts.
+- **What you'll build**: We'll work with a short Markdown resume file in this course.
+- **Prerequisites**: We recommend taking [Introduction to GitHub](https://github.com/skills/introduction-to-github) prior to this course.
+- **How long**: This course is three steps long and takes less than 30 minutes to complete.
 
 ## How to start this course
 
 1. Right-click **Start course** and open the link in a new tab.
-   <br />[![start-course](https://user-images.githubusercontent.com/1221423/218596841-0645fe1a-4aaf-4f51-9ab3-8aa2d3fdd487.svg)](/TBD-generate)
+   <br />[![start-course](https://user-images.githubusercontent.com/1221423/218596841-0645fe1a-4aaf-4f51-9ab3-8aa2d3fdd487.svg)](/skills/resolve-merge-conflicts/generate)
 2. In the new tab, follow the prompts to create a new repository.
    - For owner, choose your personal account or an organization to host the repository.
    - We recommend creating a public repository—private repositories will [use Actions minutes](https://docs.github.com/en/billing/managing-billing-for-github-actions/about-billing-for-github-actions).
