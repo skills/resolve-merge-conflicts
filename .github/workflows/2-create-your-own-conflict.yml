@@ -35,6 +35,7 @@ jobs:
 
   on_create_references_md:
     name: On create references.md 
+    needs: get_current_step
 
     # We will only run this action when:
     # 1. This repository isn't the template repository

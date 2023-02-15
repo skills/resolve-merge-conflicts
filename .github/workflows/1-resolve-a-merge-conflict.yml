@@ -34,6 +34,7 @@ jobs:
 
   on_resolve_merge_conflict:
     name: On resolve merge conflict
+    needs: get_current_step
 
     # We will only run this action when:
     # 1. This repository isn't the template repository
