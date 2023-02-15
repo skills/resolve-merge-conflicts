@@ -1,0 +1,96 @@
+name: Step 1, Create a pull request 
+
+# This step triggers after the learner creates a pull request for the my-resume branch
+# This step sets STEP to 2
+# This step closes <details id=1> and opens <details id=2>
+
+# This will run every time we open a pull request
+# Reference https://docs.github.com/en/actions/learn-github-actions/events-that-trigger-workflows
+on:
+  workflow_dispatch:
+  pull_request:
+    types: [opened]
+
+# Reference https://docs.github.com/en/actions/security-guides/automatic-token-authentication
+permissions:
+  # Need `contents: read` to checkout the repository
+  # Need `contents: write` to update the step metadata
+  contents: write
+
+jobs:
+  # Get the current step from .github/script/STEP so we can
+  # limit running the main job when the learner is on the same step.
+  get_current_step:
+    name: Check current step number
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - id: get_step
+        run: |
+          echo "current_step=$(cat ./.github/script/STEP)" >> $GITHUB_OUTPUT
+    outputs:
+      current_step: ${{ steps.get_step.outputs.current_step }}
+
+  on_create_pr:
+    name: On create PR 
+    needs: get_current_step
+
+    # We will only run this action when:
+    # 1. This repository isn't the template repository
+    # 2. The STEP is currently 0
+    # Reference https://docs.github.com/en/actions/learn-github-actions/contexts
+    # Reference https://docs.github.com/en/actions/learn-github-actions/expressions
+    if: >-
+      ${{ !github.event.repository.is_template
+          && needs.get_current_step.outputs.current_step == 0 }}
+
+    # We'll run Ubuntu for performance instead of Mac or Windows
+    runs-on: ubuntu-latest
+
+    steps:
+      # We'll need to check out the repository so that we can edit the README
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0 # Let's get all the branches
+
+      - name: Prepare a merge conflict
+        run: |
+          echo "Make sure we are on step 1"
+          if [ "$(cat .github/script/STEP)" != 1 ]
+          then
+            echo "Current step is not 1"
+            exit 0
+          fi
+
+          echo "Manually update STEP in my-resume to match STEP in main branch"
+          git checkout my-resume
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          sed -i.bak 's/1/2/' .github/script/STEP
+          git add .github/script/STEP
+          git commit --message="Update STEP in my-resume"
+          echo "Push"
+          git push origin my-resume
+
+          echo "Create a merge conflict in main"
+          git checkout main
+          sed -i.bak 's/Experience/Jobs/' resume.md
+          git add resume.md
+          git commit --message="Update resume.md in main"
+
+          echo "Push"
+          git push origin main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # Update README to close <details id=1> and open <details id=2>
+      # and set STEP to '2'
+      - name: Update to step 2
+        uses: skills/action-update-step@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          from_step: 1
+          to_step: 2
+          branch_name: my-resume
