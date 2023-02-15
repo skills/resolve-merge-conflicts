@@ -1,8 +1,8 @@
-name: Step 1, Resolve a merge conflict
+name: Step 2, Resolve a merge conflict
 
 # This step triggers after the user resolves the merge conflict
-# This step sets STEP to 2
-# This step closes <details id=1> and opens <details id=2>
+# This step sets STEP to 3
+# This step closes <details id=2> and opens <details id=3>
 
 # This will run every time we push to `my-resume` (this will be a merge commit 
 # since the user is resolving a merge conflict)
@@ -40,12 +40,12 @@ jobs:
 
     # We will only run this action when:
     # 1. This repository isn't the template repository
-    # 2. The STEP is currently 1
+    # 2. The STEP is currently 2
     # Reference https://docs.github.com/en/actions/learn-github-actions/contexts
     # Reference https://docs.github.com/en/actions/learn-github-actions/expressions
     if: >-
       ${{ !github.event.repository.is_template
-          && needs.get_current_step.outputs.current_step == 1 }}
+          && needs.get_current_step.outputs.current_step == 2 }}
 
     # We'll run Ubuntu for performance instead of Mac or Windows
     runs-on: ubuntu-latest
@@ -60,10 +60,10 @@ jobs:
 
       - name: Create and push a new file on main
         run: |
-          echo "Make sure we are on step 1"
-          if [ "$(cat .github/script/STEP)" != 1 ]
+          echo "Make sure we are on step 2"
+          if [ "$(cat .github/script/STEP)" != 2 ]
           then
-            echo "Current step is not 1"
+            echo "Current step is not 2"
             exit 0
           fi
 
@@ -84,12 +84,12 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      # Update README to close <details id=1> and open <details id=2>
-      # and set STEP to '2'
-      - name: Update to step 2
+      # Update README to close <details id=2> and open <details id=3>
+      # and set STEP to '3'
+      - name: Update to step 3
         uses: skills/action-update-step@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          from_step: 1
-          to_step: 2
+          from_step: 2
+          to_step: 3
           branch_name: my-resume

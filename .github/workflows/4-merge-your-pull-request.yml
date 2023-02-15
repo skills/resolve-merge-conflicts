@@ -1,4 +1,4 @@
-name: Step 3, Merge your pull request
+name: Step 4, Merge your pull request
 
 # This step triggers after a pull requst is merged to `main`
 # This step sets STEP to X
@@ -39,12 +39,12 @@ jobs:
 
     # We will only run this action when:
     # 1. This repository isn't the template repository
-    # 2. The STEP is currently 3
+    # 2. The STEP is currently 4
     # Reference https://docs.github.com/en/actions/learn-github-actions/contexts
     # Reference https://docs.github.com/en/actions/learn-github-actions/expressions
     if: >-
       ${{ !github.event.repository.is_template
-          && needs.get_current_step.outputs.current_step == 3 }}
+          && needs.get_current_step.outputs.current_step == 4 }}
 
     # We'll run Ubuntu for performance instead of Mac or Windows
     runs-on: ubuntu-latest
@@ -62,6 +62,6 @@ jobs:
         uses: skills/action-update-step@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          from_step: 3
+          from_step: 4
           to_step: X
           branch_name: my-resume
