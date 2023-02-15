@@ -131,7 +131,7 @@ We went ahead and added a new file called `references.md` and pushed that change
 -->
 
 <details id=4>
-<summary><h2>Step 3: Merge your pull request</h2></summary>
+<summary><h2>Step 4: Merge your pull request</h2></summary>
 
 _Almost there! :heart:_
 
