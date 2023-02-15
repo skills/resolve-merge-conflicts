@@ -1,18 +1,17 @@
-name: Step 2, Create your own conflict
+name: Step 2, Resolve a merge conflict
 
-# This step triggers after the user creates `references.md` in the `my-resume` branch
+# This step triggers after the user resolves the merge conflict
 # This step sets STEP to 3
 # This step closes <details id=2> and opens <details id=3>
 
-# This will run every time we push to the `reference.md` file in the `my-resume` branch 
+# This will run every time we push to `my-resume` (this will be a merge commit 
+# since the user is resolving a merge conflict)
 # Reference https://docs.github.com/en/actions/learn-github-actions/events-that-trigger-workflows
 on:
   workflow_dispatch:
   push:
     branches:
       - my-resume
-    paths:
-      - 'references.md'
 
 # Reference https://docs.github.com/en/actions/security-guides/automatic-token-authentication
 permissions:
@@ -35,8 +34,8 @@ jobs:
     outputs:
       current_step: ${{ steps.get_step.outputs.current_step }}
 
-  on_create_references_md:
-    name: On create references.md 
+  on_resolve_merge_conflict:
+    name: On resolve merge conflict
     needs: get_current_step
 
     # We will only run this action when:
@@ -58,6 +57,32 @@ jobs:
         with:
           fetch-depth: 0 # Let's get all the branches
           ref: my-resume
+
+      - name: Create and push a new file on main
+        run: |
+          echo "Make sure we are on step 2"
+          if [ "$(cat .github/script/STEP)" != 2 ]
+          then
+            echo "Current step is not 2"
+            exit 0
+          fi
+
+          echo "Checkout main"
+          git checkout main 
+
+          echo "Create new file"
+          printf "# References\n\n* octocat 1 😈" >> references.md
+
+          echo "Commit file"
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add references.md
+          git commit --message="Add references.md"
+
+          echo "Push"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       # Update README to close <details id=2> and open <details id=3>
       # and set STEP to '3'

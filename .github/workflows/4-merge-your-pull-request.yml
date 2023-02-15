@@ -1,8 +1,8 @@
-name: Step 0, Start
+name: Step 4, Merge your pull request
 
-# This step triggers after the learner creates a new repository from the template
-# This step sets STEP to 1
-# This step closes <details id=0> and opens <details id=1>
+# This step triggers after a pull requst is merged to `main`
+# This step sets STEP to X
+# This step closes <details id=3> and opens <details id=X>
 
 # This will run every time we create push a commit to `main`
 # Reference https://docs.github.com/en/actions/learn-github-actions/events-that-trigger-workflows
@@ -33,18 +33,18 @@ jobs:
     outputs:
       current_step: ${{ steps.get_step.outputs.current_step }}
 
-  on_start:
-    name: On start
+  on_merge:
+    name: On merge
     needs: get_current_step
 
     # We will only run this action when:
     # 1. This repository isn't the template repository
-    # 2. The STEP is currently 0
+    # 2. The STEP is currently 4
     # Reference https://docs.github.com/en/actions/learn-github-actions/contexts
     # Reference https://docs.github.com/en/actions/learn-github-actions/expressions
     if: >-
       ${{ !github.event.repository.is_template
-          && needs.get_current_step.outputs.current_step == 0 }}
+          && needs.get_current_step.outputs.current_step == 4 }}
 
     # We'll run Ubuntu for performance instead of Mac or Windows
     runs-on: ubuntu-latest
@@ -56,39 +56,12 @@ jobs:
         with:
           fetch-depth: 0 # Let's get all the branches
 
-      - name: Prepare a branch
-        run: |
-          echo "Make sure we are on step 0"
-          if [ "$(cat .github/script/STEP)" != 0 ]
-          then
-            echo "Current step is not 0"
-            exit 0
-          fi
-
-          echo "Make a branch"
-          BRANCH=my-resume
-          git checkout -b $BRANCH
-
-          echo "Update resume.md"
-          sed -i.bak 's/Experience/Job History/' resume.md 
-
-          echo "Make a commit"
-          git config user.name github-actions
-          git config user.email github-actions@github.com
-          git add resume.md
-          git commit --message="Update resume.md in my-resume"
-
-          echo "Push"
-          git push --set-upstream origin $BRANCH
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      # Update README to close <details id=0> and open <details id=1>
-      # and set STEP to '1'
-      - name: Update to step 1
+      # Update README to close <details id=3> and open <details id=X>
+      # and set STEP to 'X'
+      - name: Update to step X
         uses: skills/action-update-step@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          from_step: 0
-          to_step: 1
+          from_step: 4
+          to_step: X
           branch_name: my-resume

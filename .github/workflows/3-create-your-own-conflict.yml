@@ -1,17 +1,18 @@
-name: Step 1, Resolve a merge conflict
+name: Step 3, Create your own conflict
 
-# This step triggers after the user resolves the merge conflict
-# This step sets STEP to 2
-# This step closes <details id=1> and opens <details id=2>
+# This step triggers after the user creates `references.md` in the `my-resume` branch
+# This step sets STEP to 4
+# This step closes <details id=3> and opens <details id=4>
 
-# This will run every time we push to `my-resume` (this will be a merge commit 
-# since the user is resolving a merge conflict)
+# This will run every time we push to the `reference.md` file in the `my-resume` branch 
 # Reference https://docs.github.com/en/actions/learn-github-actions/events-that-trigger-workflows
 on:
   workflow_dispatch:
   push:
     branches:
       - my-resume
+    paths:
+      - 'references.md'
 
 # Reference https://docs.github.com/en/actions/security-guides/automatic-token-authentication
 permissions:
@@ -34,18 +35,18 @@ jobs:
     outputs:
       current_step: ${{ steps.get_step.outputs.current_step }}
 
-  on_resolve_merge_conflict:
-    name: On resolve merge conflict
+  on_create_references_md:
+    name: On create references.md 
     needs: get_current_step
 
     # We will only run this action when:
     # 1. This repository isn't the template repository
-    # 2. The STEP is currently 1
+    # 2. The STEP is currently 3
     # Reference https://docs.github.com/en/actions/learn-github-actions/contexts
     # Reference https://docs.github.com/en/actions/learn-github-actions/expressions
     if: >-
       ${{ !github.event.repository.is_template
-          && needs.get_current_step.outputs.current_step == 1 }}
+          && needs.get_current_step.outputs.current_step == 3 }}
 
     # We'll run Ubuntu for performance instead of Mac or Windows
     runs-on: ubuntu-latest
@@ -58,38 +59,12 @@ jobs:
           fetch-depth: 0 # Let's get all the branches
           ref: my-resume
 
-      - name: Create and push a new file on main
-        run: |
-          echo "Make sure we are on step 1"
-          if [ "$(cat .github/script/STEP)" != 1 ]
-          then
-            echo "Current step is not 1"
-            exit 0
-          fi
-
-          echo "Checkout main"
-          git checkout main 
-
-          echo "Create new file"
-          printf "# References\n\n* octocat 1 😈" >> references.md
-
-          echo "Commit file"
-          git config user.name github-actions
-          git config user.email github-actions@github.com
-          git add references.md
-          git commit --message="Add references.md"
-
-          echo "Push"
-          git push
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      # Update README to close <details id=1> and open <details id=2>
-      # and set STEP to '2'
-      - name: Update to step 2
+      # Update README to close <details id=2> and open <details id=3>
+      # and set STEP to '4'
+      - name: Update to step 4
         uses: skills/action-update-step@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          from_step: 1
-          to_step: 2
+          from_step: 3
+          to_step: 4
           branch_name: my-resume
