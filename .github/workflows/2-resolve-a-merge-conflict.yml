@@ -3,7 +3,7 @@ name: Step 2, Resolve a merge conflict
 # This step triggers after the user resolves the merge conflict.
 # This workflow updates from step 2 to step 3.
 
-# This will run every time we push to `my-resume` (this will be a merge commit 
+# This will run every time we push to `my-resume` (this will be a merge commit
 # since the user is resolving a merge conflict)
 # Reference: https://docs.github.com/en/actions/learn-github-actions/events-that-trigger-workflows
 on:

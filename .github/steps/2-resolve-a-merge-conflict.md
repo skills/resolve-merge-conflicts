@@ -14,7 +14,7 @@ This can be intimidating, but have no fear, Git is smart when it comes to mergin
 
 1. Open the pull request that you just created, we created a conflict for you. Have no fear!
 1. At the bottom of the page, under "This branch has conflicts that must be resolved", click the **Resolve conflicts** button.
-1. Look for the highlighted sections that begins with  `<<<<<<<  my-resume` and ends with `>>>>>>> main`. These markers are added by Git to show you the content that is in conflict.
+1. Look for the highlighted sections that begins with `<<<<<<< my-resume` and ends with `>>>>>>> main`. These markers are added by Git to show you the content that is in conflict.
 1. Remove the changes made on the main branch by deleting all of the content below the `=======` and above `>>>>>>> main`.
 1. Next, remove the merge conflict markers by deleting the following lines:
    ```

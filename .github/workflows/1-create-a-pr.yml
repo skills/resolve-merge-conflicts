@@ -1,4 +1,4 @@
-name: Step 1, Create a pull request 
+name: Step 1, Create a pull request
 
 # This step triggers after the learner creates a pull request for the my-resume branch
 # This workflow updates from step 1 to step 2.
@@ -31,7 +31,7 @@ jobs:
       current_step: ${{ steps.get_step.outputs.current_step }}
 
   on_create_pr:
-    name: On create PR 
+    name: On create PR
     needs: get_current_step
 
     # We will only run this action when:

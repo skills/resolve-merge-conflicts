@@ -11,7 +11,7 @@ on:
     branches:
       - my-resume
     paths:
-      - 'references.md'
+      - "references.md"
 
 # Reference: https://docs.github.com/en/actions/security-guides/automatic-token-authentication
 permissions:
@@ -34,7 +34,7 @@ jobs:
       current_step: ${{ steps.get_step.outputs.current_step }}
 
   on_create_references_md:
-    name: On create references.md 
+    name: On create references.md
     needs: get_current_step
 
     # We will only run this action when:
