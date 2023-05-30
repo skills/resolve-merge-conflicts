@@ -15,8 +15,7 @@ _Learn why conflicts happen and how to resolve them._
   and tell the learner why they should take the course.
 -->
 
-<details id=0 open>
-<summary><h2>Welcome</h2></summary>
+## Welcome
 
 Merge conflicts happen when two people make changes to the same file on GitHub—a common occurrence when you’re working with others. While resolving differences might involve some discussion, merge conflicts don’t have to be scary. This course guides you through the steps to finding the best merge conflict solution, so your team can keep building.
 
@@ -24,7 +23,7 @@ Merge conflicts happen when two people make changes to the same file on GitHub�
 - **What you'll learn**: What merge conflicts are, how you resolve merge conflicts, how to reduce merge conflicts.
 - **What you'll build**: We'll work with a short Markdown resume file in this course.
 - **Prerequisites**: We recommend taking [Introduction to GitHub](https://github.com/skills/introduction-to-github) prior to this course.
-- **How long**: This course  takes less than 30 minutes to complete.
+- **How long**: This course takes less than 30 minutes to complete.
 
 In this course, you will:
 
@@ -54,7 +53,7 @@ In this course, you will:
    - Scroll down and click the **Create repository** button at the bottom of the form.
 3. After your new repository is created, wait about 20 seconds, then refresh the page. Follow the step-by-step instructions in the new repository's README.
 
-</details>
+
 
 <!--
   <<< Author notes: Step 1 >>>
@@ -64,8 +63,7 @@ In this course, you will:
   Encourage users to open new tabs for steps!
 -->
 
-<details id=1>
-<summary><h2>Step 1: Create a pull request</h2></summary>
+## Step 1: Create a pull request
 
 _Welcome to "Managing Merge Conflicts"! :wave:_
 
@@ -78,7 +76,7 @@ _Welcome to "Managing Merge Conflicts"! :wave:_
 1. [Create a pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) setting `my-resume` as the head branch and `main` as the base branch.  You can enter `Resolving merge conflicts` for the pull request title and body.
 1. Wait about 20 seconds then refresh this page for the next step.
 
-</details>
+
 
 <!--
   <<< Author notes: Step 2 >>>
@@ -86,8 +84,7 @@ _Welcome to "Managing Merge Conflicts"! :wave:_
   Define terms and link to docs.github.com.
 -->
 
-<details id=2>
-<summary><h2>Step 2: Resolve a merge conflict</h2></summary>
+## Step 2: Resolve a merge conflict
 
 _Good start! Now let's look deeper at a merge conflict! :mag:_
 
@@ -109,7 +106,7 @@ This can be intimidating, but have no fear, Git is smart when it comes to mergin
 1. Finally, click **Commit merge**.
 1. Wait about 20 seconds then refresh this page for the next step.
 
-</details>
+
 
 <!--
   <<< Author notes: Step 3 >>>
@@ -117,8 +114,7 @@ This can be intimidating, but have no fear, Git is smart when it comes to mergin
   Define terms and link to docs.github.com.
 -->
 
-<details id=3>
-<summary><h2>Step 3: Create your own conflict</h2></summary>
+## Step 3: Create your own conflict
 
 _Good job! You've solved a merge conflict! :tada:_
 
@@ -138,7 +134,7 @@ We went ahead and added a new file called `references.md` and pushed that change
 1. Click the **Commit new file** button, making sure the "Commit directly to the `my-resume` branch" option is selected.
 1. Wait about 20 seconds then refresh this page for the next step.
 
-</details>
+
 
 <!--
   <<< Author notes: Step 4 >>>
@@ -146,8 +142,7 @@ We went ahead and added a new file called `references.md` and pushed that change
   Define terms and link to docs.github.com.
 -->
 
-<details id=4>
-<summary><h2>Step 4: Merge your pull request</h2></summary>
+## Step 4: Merge your pull request
 
 _Almost there! :heart:_
 
@@ -161,15 +156,14 @@ You can now [merge](https://docs.github.com/en/get-started/quickstart/github-glo
 1. Delete the branch `my-resume` (optional).
 1. Wait about 20 seconds then refresh this page for the next step.
 
-</details>
+
 
 <!--
   <<< Author notes: Finish >>>
   Review what we learned, ask for feedback, provide next steps.
 -->
 
-<details id=X>
-<summary><h2>Finish</h2></summary>
+## Finish
 
 _Congratulations friend, you've completed this course!_
 
@@ -189,7 +183,7 @@ Here's a recap of all the tasks you've accomplished in your repository:
 - [Read the GitHub Getting Started docs](https://docs.github.com/en/get-started).
 - To find projects to contribute to, check out [GitHub Explore](https://github.com/explore).
 
-</details>
+
 
 <!--
   <<< Author notes: Footer >>>
