@@ -7,7 +7,7 @@
   Add your open source license, GitHub uses MIT license.
 -->
 
-# Resolve merge conflicts
+# Resolve merge conflictsz
 
 _Learn why conflicts happen and how to resolve them._
 
