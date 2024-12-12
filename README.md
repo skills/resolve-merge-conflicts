@@ -32,8 +32,8 @@ Merge conflicts happen when two people make changes to the same file on GitHubâ€
 In this course, you will:
 
 1. Create a pull request
-2. Resolve a merge conflict
-3. Create a merge conflict
+2. Create a merge conflict
+3. Resolve a merge conflict
 4. Merge your pull request
 
 ### How to start this course
