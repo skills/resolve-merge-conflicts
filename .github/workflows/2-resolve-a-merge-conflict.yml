@@ -1,92 +1,59 @@
-name: Step 2, Resolve a merge conflict
+name: Step 2
 
-# This step triggers after the user resolves the merge conflict.
-# This workflow updates from step 2 to step 3.
-
-# This will run every time we push to `my-resume` (this will be a merge commit
-# since the user is resolving a merge conflict)
-# Reference: https://docs.github.com/en/actions/learn-github-actions/events-that-trigger-workflows
 on:
-  workflow_dispatch:
-  push:
-    branches:
-      - my-resume
+  pull_request:
+    types:
+      - assigned
+      - review_requested
 
-# Reference: https://docs.github.com/en/actions/security-guides/automatic-token-authentication
 permissions:
-  # Need `contents: read` to checkout the repository.
-  # Need `contents: write` to update the step metadata.
   contents: write
+  actions: write
+  issues: write
+
+env:
+  STEP_3_FILE: ".github/steps/3-leave-a-review.md"
 
 jobs:
-  # Get the current step to only run the main job when the learner is on the same step.
-  get_current_step:
-    name: Check current step number
+  find_exercise:
+    name: Find Exercise Issue
+    uses: skills/exercise-toolkit/.github/workflows/find-exercise-issue.yml@v0.5.0
+
+  post_next_step_content:
+    name: Post next step content
+    needs: [find_exercise]
     runs-on: ubuntu-latest
+    env:
+      ISSUE_URL: ${{ needs.find_exercise.outputs.issue-url }}
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - id: get_step
-        run: |
-          echo "current_step=$(cat ./.github/steps/-step.txt)" >> $GITHUB_OUTPUT
-    outputs:
-      current_step: ${{ steps.get_step.outputs.current_step }}
 
-  on_resolve_merge_conflict:
-    name: On resolve merge conflict
-    needs: get_current_step
-
-    # We will only run this action when:
-    # 1. This repository isn't the template repository.
-    # 2. The step is currently 2.
-    # Reference: https://docs.github.com/en/actions/learn-github-actions/contexts
-    # Reference: https://docs.github.com/en/actions/learn-github-actions/expressions
-    if: >-
-      ${{ !github.event.repository.is_template
-          && needs.get_current_step.outputs.current_step == 2 }}
-
-    # We'll run Ubuntu for performance instead of Mac or Windows.
-    runs-on: ubuntu-latest
-
-    steps:
-      # We'll need to check out the repository so that we can edit the README.
-      - name: Checkout
+      - name: Get response templates
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0 # Let's get all the branches.
-          ref: my-resume
+          repository: skills/exercise-toolkit
+          path: exercise-toolkit
+          ref: v0.5.0
 
-      - name: Create and push a new file on main
+      - name: Create comment - add step content
         run: |
-          echo "Make sure we are on step 2"
-          if [ "$(cat .github/steps/-step.txt)" != 2 ]
-          then
-            echo "Current step is not 2"
-            exit 0
-          fi
-
-          echo "Checkout main"
-          git checkout main 
-
-          echo "Create new file"
-          printf "# References\n\n* octocat 1 😈" >> references.md
-
-          echo "Commit file"
-          git config user.name github-actions[bot]
-          git config user.email github-actions[bot]@users.noreply.github.com
-          git add references.md
-          git commit --message="Add references.md"
-
-          echo "Push"
-          git push
+          gh issue comment "$ISSUE_URL" \
+            --body-file "$STEP_3_FILE"
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      # In README.md, switch step 2 for step 3.
-      - name: Update to step 3
-        uses: skills/action-update-step@v2
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          from_step: 2
-          to_step: 3
-          branch_name: my-resume
+      - name: Create comment - watching for progress
+        run: |
+          gh issue comment "$ISSUE_URL" \
+            --body-file exercise-toolkit/markdown-templates/step-feedback/watching-for-progress.md
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Disable current workflow and enable next one
+        run: |
+          gh workflow disable "Step 2"
+          gh workflow enable "Step 3"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
