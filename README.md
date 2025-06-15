@@ -29,7 +29,7 @@ Merge conflicts happen when two people make changes to the same file on GitHubâ€
 - **Prerequisites**: We recommend taking [Introduction to GitHub](https://github.com/skills/introduction-to-github) prior to this course.
 - **How long**: This course takes less than 30 minutes to complete.
 
-In this course, you will:
+In this exercise, you will:
 
 1. Create a pull request
 2. Resolve a merge conflict
