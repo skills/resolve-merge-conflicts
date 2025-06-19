@@ -93,7 +93,11 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Confirm Step 1 is enabled
-        run: gh workflow view "Step 1" --json state
+      - name: Confirm workflows visible and enabled
+        run: |
+          echo "Listing all workflows:"
+          gh workflow list
+          echo "Checking Step 1 YAML:"
+          gh workflow view "Step 1" --yaml
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
