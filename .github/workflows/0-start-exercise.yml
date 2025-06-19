@@ -47,13 +47,14 @@ jobs:
           git push origin my-resume
 
           git checkout main
+          git pull --rebase origin main
           echo "- Built internal tools at Acme Corp" >> resume.md
           git add resume.md
           git commit -m "Add Acme Corp experience"
           git push origin main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
+          
   post_next_step_content:
     name: Post next step content
     runs-on: ubuntu-latest
