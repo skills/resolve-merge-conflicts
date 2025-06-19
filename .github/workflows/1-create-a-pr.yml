@@ -12,7 +12,7 @@ permissions:
   issues: write
 
 env:
-  STEP_2_FILE: ".github/steps/2-assign-yourself.md"
+  STEP_2_FILE: ".github/steps/2-resolve-a-merge-conflict.md"
 
 jobs:
   find_exercise:
