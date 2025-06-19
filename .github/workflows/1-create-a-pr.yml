@@ -38,7 +38,6 @@ jobs:
           git checkout -b my-resume
           git config user.name github-actions[bot]
           git config user.email github-actions[bot]@users.noreply.github.com
-          sed -i 's/1/2/' .github/steps/-step.txt
           git add .github/steps/-step.txt
           git commit -m "Update step in my-resume"
           git push origin my-resume
@@ -51,7 +50,7 @@ jobs:
           git push origin main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          
+
       - name: Get response templates
         uses: actions/checkout@v4
         with:
