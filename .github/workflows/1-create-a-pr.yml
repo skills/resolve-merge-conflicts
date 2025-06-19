@@ -27,9 +27,31 @@ jobs:
       ISSUE_URL: ${{ needs.find_exercise.outputs.issue-url }}
 
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
+      - name: Prepare a merge conflict
+        run: |
+          echo "Create my-resume branch"
+          git checkout -b my-resume
+          git config user.name github-actions[bot]
+          git config user.email github-actions[bot]@users.noreply.github.com
+          sed -i 's/1/2/' .github/steps/-step.txt
+          git add .github/steps/-step.txt
+          git commit -m "Update step in my-resume"
+          git push origin my-resume
+
+          echo "Create conflicting commit on main"
+          git checkout main
+          sed -i 's/Experience/Jobs/' resume.md
+          git add resume.md
+          git commit -m "Update resume.md in main"
+          git push origin main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
       - name: Get response templates
         uses: actions/checkout@v4
         with:
