@@ -36,20 +36,20 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Simulate conflict between main and my-resume
+      - name: Simulate conflict in resume.md
         run: |
           git checkout -b my-resume
           git config user.name github-actions[bot]
           git config user.email github-actions[bot]@users.noreply.github.com
-          sed -i 's/1/2/' .github/steps/-step.txt
-          git add .github/steps/-step.txt
-          git commit -m "Update step in my-resume"
+          echo "- Contributed to open source projects" >> resume.md
+          git add resume.md
+          git commit -m "Add open source contribution"
           git push origin my-resume
 
           git checkout main
-          sed -i 's/Experience/Jobs/' resume.md
+          echo "- Built internal tools at Acme Corp" >> resume.md
           git add resume.md
-          git commit -m "Update resume.md in main"
+          git commit -m "Add Acme Corp experience"
           git push origin main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
