@@ -47,7 +47,7 @@ jobs:
           echo "Make a commit"
           git config user.name github-actions[bot]
           git config user.email github-actions[bot]@users.noreply.github.com
-          git add index.html
+          git add index.html index.html.bak
           git commit --message="Update game over message"
 
           echo "Push"
