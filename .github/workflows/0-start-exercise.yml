@@ -80,6 +80,12 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Enable next step workflow
+        run: |
+          gh workflow enable "Step 1"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Create comment - watching for progress
         run: |
           gh issue comment "$ISSUE_URL" \
@@ -87,8 +93,4 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Enable next step workflow
-        run: |
-          gh workflow enable "Step 1"
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      
