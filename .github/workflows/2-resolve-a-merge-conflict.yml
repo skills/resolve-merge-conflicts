@@ -10,6 +10,7 @@ permissions:
   contents: write
   actions: write
   issues: write
+  pull-requests: write
 
 env:
   STEP_3_FILE: ".github/steps/3-create-your-own-conflict.md"
@@ -29,6 +30,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: main  # ensure base branch context
 
       - name: Get response templates
         uses: actions/checkout@v4
@@ -36,6 +40,24 @@ jobs:
           repository: skills/exercise-toolkit
           path: exercise-toolkit
           ref: v0.5.0
+      
+      - name: Create and push a new file on main
+        run: |
+          set -e
+
+          echo "Create new file"
+          printf "# References\n\n* octocat 1 😈" > references.md
+
+          echo "Commit file"
+          git config user.name github-actions[bot]
+          git config user.email github-actions[bot]@users.noreply.github.com
+          git add references.md
+          git commit -m "Add references.md"
+
+          echo "Push"
+          git push origin main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Create comment - add step content
         run: |
