@@ -1,7 +1,9 @@
 name: Step 4
 
 on:
-  push:
+  pull_request:
+    types:
+      - closed
     branches:
       - main
 
@@ -15,6 +17,7 @@ env:
 
 jobs:
   find_exercise:
+    if: github.event.pull_request.merged == true
     name: Find Exercise Issue
     uses: skills/exercise-toolkit/.github/workflows/find-exercise-issue.yml@v0.5.0
 
