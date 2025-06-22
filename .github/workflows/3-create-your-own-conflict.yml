@@ -1,9 +1,11 @@
 name: Step 3
 
 on:
-  pull_request_review:
+  pull_request:
     types:
-      - submitted
+      - synchronize
+    branches:
+      - main
 
 permissions:
   contents: write
