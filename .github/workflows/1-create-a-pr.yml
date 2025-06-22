@@ -1,14 +1,16 @@
 name: Step 1
 
 on:
-  pull_request:
-    branches: [main]            # Trigger only for PRs targeting the 'main' branch
-    types: [opened]             # Only when the PR is opened (created)
+  pull_request_target:
+    branches: [main]
+    types: [opened]
+  workflow_dispatch: {}
 
 permissions:
   contents: write
   actions: write
   issues: write
+  pull-requests: write  # Required for commenting or updating PR
 
 env:
   STEP_2_FILE: ".github/steps/2-resolve-a-merge-conflict.md"
@@ -26,8 +28,10 @@ jobs:
       ISSUE_URL: ${{ needs.find_exercise.outputs.issue-url }}
 
     steps:
-      - name: Checkout
+      - name: Checkout the base branch (main)
         uses: actions/checkout@v4
+        with:
+          ref: main  # Required because pull_request_target runs in the base branch context
 
       - name: Get response templates
         uses: actions/checkout@v4
@@ -56,19 +60,3 @@ jobs:
           gh workflow enable "Step 2"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      # Debug steps (optional) ...
-      - name: Debug - print event payload
-        run: |
-          echo "EVENT PAYLOAD:"
-          cat $GITHUB_EVENT_PATH
-
-      - name: Debug - list files
-        run: |
-          echo "Current directory: $(pwd)"
-          ls -al
-          echo "Contents of .github/steps:"
-          ls -al .github/steps || echo ".github/steps does not exist"
-
-      - name: Debug - print environment variables
-        run: env
