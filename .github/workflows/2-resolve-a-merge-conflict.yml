@@ -1,10 +1,10 @@
 name: Step 2
 
 on:
-  pull_request:
-    types:
-      - assigned
-      - review_requested
+  pull_request_target:
+    types: [synchronize]
+    branches:
+      - main
 
 permissions:
   contents: write
