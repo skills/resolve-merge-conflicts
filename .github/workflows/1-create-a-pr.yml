@@ -1,9 +1,9 @@
 name: Step 1
 
 on:
-  workflow_dispatch:
   pull_request:
-    types: [opened]
+    branches: [main]            # Trigger only for PRs targeting the 'main' branch
+    types: [opened]             # Only when the PR is opened (created)
 
 permissions:
   contents: write
@@ -57,6 +57,7 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+      # Debug steps (optional) ...
       - name: Debug - print event payload
         run: |
           echo "EVENT PAYLOAD:"
