@@ -57,3 +57,18 @@ jobs:
           gh workflow enable "Step 2"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Debug - print event payload
+        run: |
+          echo "EVENT PAYLOAD:"
+          cat $GITHUB_EVENT_PATH
+
+      - name: Debug - list files
+        run: |
+          echo "Current directory: $(pwd)"
+          ls -al
+          echo "Contents of .github/steps:"
+          ls -al .github/steps || echo ".github/steps does not exist"
+
+      - name: Debug - print environment variables
+        run: env

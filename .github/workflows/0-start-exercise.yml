@@ -89,15 +89,7 @@ jobs:
 
       - name: Enable next step workflow
         run: |
+          gh workflow disable "Step 0"
           gh workflow enable "Step 1"
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Confirm workflows visible and enabled
-        run: |
-          echo "Listing all workflows:"
-          gh workflow list
-          echo "Checking Step 1 YAML:"
-          gh workflow view "Step 1" --yaml
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
