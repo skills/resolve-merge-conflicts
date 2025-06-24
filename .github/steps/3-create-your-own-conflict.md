@@ -1,9 +1,3 @@
-<!--
-  <<< Author notes: Step 3 >>>
-  Start this step by acknowledging the previous step.
-  Define terms and link to docs.github.com.
--->
-
 ## Step 3: Create your own conflict
 
 _Good job! You've solved a merge conflict! :tada:_

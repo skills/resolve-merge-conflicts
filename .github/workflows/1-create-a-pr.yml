@@ -4,11 +4,8 @@ on:
   pull_request_target:
     branches: [main]
     types: [opened]
-  workflow_dispatch: {}
 
 permissions:
-  contents: write
-  actions: write
   issues: write
   pull-requests: write  # Required for commenting or updating PR
 
@@ -31,7 +28,7 @@ jobs:
       - name: Checkout the base branch (main)
         uses: actions/checkout@v4
         with:
-          ref: main  # Required because pull_request_target runs in the base branch context
+          ref: main  
 
       - name: Get response templates
         uses: actions/checkout@v4
