@@ -7,6 +7,7 @@ on:
 
 permissions:
   issues: write
+  actions: write  # Required for diabling and enabling workflows
   pull-requests: write  # Required for commenting or updating PR
 
 env:
