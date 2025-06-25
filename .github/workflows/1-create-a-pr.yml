@@ -1,7 +1,7 @@
 name: Step 1
 
 on:
-  pull_request_target:
+  pull_request_target: # Triggered when a PR is opened or synchronized even if there is a merge conflict unlike pull_request
     branches: [main]
     types: [opened]
 
