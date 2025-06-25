@@ -10,4 +10,4 @@ You can now [merge](https://docs.github.com/en/get-started/quickstart/github-glo
    > Look back at step one if you need help.
 1. Click **Merge pull request**.
 1. Delete the branch `my-resume` (optional).
-1. Wait about 20 seconds then refresh this page (the one you're following instructions from). [GitHub Actions](https://docs.github.com/en/actions) will automatically update to the next step.
+1. Now that your pull request is merged, Mona should already be busy checking your work. Give her a moment and keep watch in the comments. You will see her respond with progress info and the next lesson.

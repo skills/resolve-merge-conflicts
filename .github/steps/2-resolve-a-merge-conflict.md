@@ -18,4 +18,4 @@ This can be intimidating, but have no fear, Git is smart when it comes to mergin
    ```
 1. With the merge conflict markers removed, click **Mark as resolved**.
 1. Finally, click **Commit merge**.
-1. Wait about 20 seconds then refresh this page (the one you're following instructions from). [GitHub Actions](https://docs.github.com/en/actions) will automatically update to the next step.
+1. Now that the conflict is resolved, Mona should already be busy checking your work. Give her a moment and keep watch in the comments. You will see her respond with progress info and the next lesson.
