@@ -11,14 +11,14 @@ permissions:
   issues: write
 
 env:
-  STEP_1_FILE: ".github/steps/1-create-a-pr.md"
+  STEP_1_FILE: ".github/steps/1-step.md"
 
 jobs:
   start_exercise:
     if: |
       !github.event.repository.is_template
     name: Start Exercise
-    uses: skills/exercise-toolkit/.github/workflows/start-exercise.yml@v0.5.0
+    uses: skills/exercise-toolkit/.github/workflows/start-exercise.yml@v0.7.0
     with:
       exercise-title: "Resolve Merge Conflicts"
       intro-message: "Let's learn how to resolve merge conflicts when collaborating on GitHub."
@@ -27,8 +27,6 @@ jobs:
     name: Prepare merge conflict
     runs-on: ubuntu-latest
     needs: [start_exercise]
-    env:
-      ISSUE_URL: ${{ needs.start_exercise.outputs.issue-url }}
 
     steps:
       - name: Checkout
@@ -43,24 +41,25 @@ jobs:
           git config user.email github-actions[bot]@users.noreply.github.com
           echo "- Contributed to open source projects" >> resume.md
           git add resume.md
-          git commit -m "Add open source contribution"
+          git commit -m "Add open source experience"
           git push origin my-resume
 
           git checkout main
           git pull --rebase origin main
-          echo "- Built internal tools at Acme Corp" >> resume.md
+          echo "- Built internal tools" >> resume.md
           git add resume.md
-          git commit -m "Add Acme Corp experience"
+          git commit -m "Add internal experience"
           git push origin main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          
+
   post_next_step_content:
     name: Post next step content
     runs-on: ubuntu-latest
-    needs: [start_exercise, prepare_merge_conflict]
+    needs: [start_exercise]
     env:
-      ISSUE_URL: ${{ needs.start_exercise.outputs.issue-url }}
+      ISSUE_NUMBER: ${{ needs.start_exercise.outputs.issue-number }}
+      ISSUE_REPOSITORY: ${{ github.repository }}
 
     steps:
       - name: Checkout
@@ -71,21 +70,21 @@ jobs:
         with:
           repository: skills/exercise-toolkit
           path: exercise-toolkit
-          ref: v0.5.0
+          ref: v0.7.0
 
       - name: Create comment - add step content
-        run: |
-          gh issue comment "$ISSUE_URL" \
-            --body-file "$STEP_1_FILE"
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        uses: GrantBirki/comment@v2.1.1
+        with:
+          repository: ${{ env.ISSUE_REPOSITORY }}
+          issue-number: ${{ env.ISSUE_NUMBER }}
+          file: ${{ env.STEP_1_FILE }}
 
       - name: Create comment - watching for progress
-        run: |
-          gh issue comment "$ISSUE_URL" \
-            --body-file "exercise-toolkit/markdown-templates/step-feedback/watching-for-progress.md"
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        uses: GrantBirki/comment@v2.1.1
+        with:
+          repository: ${{ env.ISSUE_REPOSITORY }}
+          issue-number: ${{ env.ISSUE_NUMBER }}
+          file: exercise-toolkit/markdown-templates/step-feedback/watching-for-progress.md
 
       - name: Enable next step workflow
         run: |

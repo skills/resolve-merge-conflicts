@@ -1,29 +1,29 @@
-# Resolve merge conflicts
+# Resolve Merge Conflicts
 
 _Learn why conflicts happen and how to resolve them._
 
 ## Welcome
 
-Merge conflicts happen when two people make changes to the same file on GitHub—a common occurrence when you’re working with others. While resolving differences might involve some discussion, merge conflicts don’t have to be scary. This course guides you through the steps to finding the best merge conflict solution, so your team can keep building.
+Merge conflicts happen when two people make changes to the same file on GitHub—a common occurrence when you’re working with others. While resolving differences might involve some discussion, merge conflicts don’t have to be scary.
 
-- **Who is this for**: New developers, new GitHub users, users new to Git, students, managers, teams.
-- **What you'll learn**: What merge conflicts are, how you resolve merge conflicts, how to reduce merge conflicts.
-- **What you'll build**: We'll work with a short Markdown resume file in this course.
-- **Prerequisites**: We recommend taking [Introduction to GitHub](https://github.com/skills/introduction-to-github) prior to this course.
-- **How long**: This course takes less than 30 minutes to complete.
+- **Who is this for**: New developers, new Git and GitHub users
+- **What you'll learn**: We'll introduce the tools for inspecting and resolving a merge conflict.
+- **What you'll build**: You'll use a web editor to fix conflicting changes to Markdown file.
+- **Prerequisites**:
+  - Skills Exercise: [Introduction to GitHub](https://github.com/skills-dev/introduction-to-github)
+- **How long**: less than 30 minutes
 
 In this exercise, you will:
 
-1. Create a pull request
-2. Resolve a merge conflict
-3. Create a merge conflict
-4. Merge your pull request
+1. Learn the causes of a merge conflict.
+2. The tools for resolving a merge conflict.
+3. When and how to resolve a merge conflict.
 
 ### How to start this course
 
 Simply copy the exercise to your account, then give your favorite Octocat (Mona) **about 20 seconds** to prepare the first lesson, then **refresh the page**.
 
-[![](https://img.shields.io/badge/Copy%20Exercise-%E2%86%92-1f883d?style=for-the-badge&logo=github&labelColor=197935)](https://github.com/new?template_owner=Chukslord1&template_name=resolve-merge-conflicts&owner=%40me&name=skills-resolve-merge-conflicts&description=Exercise:+Resolve+Merge+Conflicts&visibility=public)
+[![](https://img.shields.io/badge/Copy%20Exercise-%E2%86%92-1f883d?style=for-the-badge&logo=github&labelColor=197935)](https://github.com/new?template_owner=skills-dev-2&template_name=resolve-merge-conflicts&owner=%40me&name=skills-resolve-merge-conflicts&description=Exercise:+Resolve+Merge+Conflicts&visibility=public)
 
 <details>
 <summary>Having trouble? 🤷</summary><br/>
