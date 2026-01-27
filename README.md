@@ -10,7 +10,7 @@ Merge conflicts happen when two people make changes to the same file on GitHubâ€
 - **What you'll learn**: We'll introduce the tools for inspecting and resolving a merge conflict.
 - **What you'll build**: You'll use a web editor to fix conflicting changes to Markdown file.
 - **Prerequisites**:
-  - Skills Exercise: [Introduction to GitHub](https://github.com/skills-dev/introduction-to-github)
+  - Skills Exercise: [Introduction to GitHub](https://github.com/skills/introduction-to-github)
 - **How long**: less than 30 minutes
 
 In this exercise, you will:
@@ -23,7 +23,7 @@ In this exercise, you will:
 
 Simply copy the exercise to your account, then give your favorite Octocat (Mona) **about 20 seconds** to prepare the first lesson, then **refresh the page**.
 
-[![](https://img.shields.io/badge/Copy%20Exercise-%E2%86%92-1f883d?style=for-the-badge&logo=github&labelColor=197935)](https://github.com/new?template_owner=skills-dev&template_name=resolve-merge-conflicts&owner=%40me&name=skills-resolve-merge-conflicts&description=Exercise:+Resolve+Merge+Conflicts&visibility=public)
+[![](https://img.shields.io/badge/Copy%20Exercise-%E2%86%92-1f883d?style=for-the-badge&logo=github&labelColor=197935)](https://github.com/new?template_owner=skills&template_name=resolve-merge-conflicts&owner=%40me&name=skills-resolve-merge-conflicts&description=Exercise:+Resolve+Merge+Conflicts&visibility=public)
 
 <details>
 <summary>Having trouble? ðŸ¤·</summary><br/>
