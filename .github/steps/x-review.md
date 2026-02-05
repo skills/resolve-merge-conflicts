@@ -1,6 +1,6 @@
 ## Review
 
-<img src=https://octodex.github.com/images/benevocats.jpg alt=celebrate width=300 align=right>
+<img src="../images/celebration-benevocats.jpg" alt="celebrate" width="300" align="right">
 
 Congratulations! You've successfully completed the **Resolve Merge Conflicts** exercise. 🎉
 
