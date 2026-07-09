@@ -34,7 +34,7 @@ gitGraph
 
 ### ⌨️ Activity: Create a pull request
 
-To quickly practice, we already created the above scenario for you by making a new branch `my-resume` then modifying `resume.md` on both branches, which will will cause a conflict. Let's practice with it!
+To quickly practice, we already created the above scenario for you by making a new branch `my-resume` then modifying `resume.md` on both branches, which will cause a conflict. Let's practice with it!
 
 1. Open this repo in a new browser tab, and work on the steps in your second tab while you read the instructions in this tab.
 
