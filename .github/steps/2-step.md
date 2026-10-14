@@ -6,7 +6,7 @@ You typically have 3 options for managing a conflict:
 
 1. Accept the version from the base branch.
 1. Accept the version from the compare branch.
-1. Manually combined the changes from both branches.
+1. Manually combine the changes from both branches.
 
 > [!TIP]
 > You can learn more about managing conflicts on the [GitHub Docs: resolve the conflict](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/resolving-a-merge-conflict-using-the-command-line) page.
